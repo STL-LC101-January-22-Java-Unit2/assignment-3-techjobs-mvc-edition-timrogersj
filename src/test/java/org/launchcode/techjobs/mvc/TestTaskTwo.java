@@ -34,7 +34,7 @@ public class TestTaskTwo {
     public void testJobListingUsesTable () throws Exception {
         mockMvc.perform(get("/list/jobs?column=coreCompetency&value=Ruby"))
                 .andExpect(status().isOk())
-                .andExpect(xpath("//table").exists());
+                .andExpect(xpath("//table").doesNotExist());
     }
 
     /*
