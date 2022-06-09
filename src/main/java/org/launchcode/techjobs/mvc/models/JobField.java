@@ -37,19 +37,23 @@ public abstract class JobField {
 
     @Override
     public int hashCode() {
+
         return Objects.hash(id);
     }
 
     // Getters and setters.
     public int getId() {
+
         return id;
     }
 
     public String getValue() {
+
         return value;
     }
 
     public void setValue(String value) {
+
         this.value = value;
     }
 }
