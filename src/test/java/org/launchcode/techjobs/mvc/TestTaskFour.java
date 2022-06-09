@@ -65,7 +65,7 @@ public class TestTaskFour {
                 .param("searchType", "employer")
                 .param("searchTerm", "equifax"))
                 .andExpect(status().isOk())
-                .andExpect(xpath("//table[contains(@class, 'job-listing')][1]").exists())
+                .andExpect(xpath("//table[contains(@class, 'job-listing')][1]").doesNotExist())
                 .andExpect(xpath("//table[contains(@class, 'job-listing')][2]").doesNotExist());
     }
 
