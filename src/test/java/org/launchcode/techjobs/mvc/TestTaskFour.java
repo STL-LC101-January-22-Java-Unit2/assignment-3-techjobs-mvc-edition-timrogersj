@@ -26,19 +26,19 @@ public class TestTaskFour {
     @Test
     public void testSearchResultsLoad() throws Exception {
         mockMvc.perform(post("/search/results")
-            .param("searchType", "all")
-            .param("searchTerm", "asdf"))
-            .andExpect(status().isOk());
+                        .param("searchType", "all")
+                        .param("searchTerm", "asdf"))
+                .andExpect(status().isOk());
     }
 
     /*
-    * Searching by location for "new york" should return 1 result
-    * */
+     * Searching by location for "new york" should return 1 result
+     * */
     @Test
     public void testFirstSearchTestCase() throws Exception {
         mockMvc.perform(post("/search/results")
-                .param("searchType", "location")
-                .param("searchTerm", "new york"))
+                        .param("searchType", "location")
+                        .param("searchTerm", "new york"))
                 .andExpect(status().isOk())
                 .andExpect(xpath("//table[contains(@class, 'job-listing')][1]").exists())
                 .andExpect(xpath("//table[contains(@class, 'job-listing')][2]").doesNotExist());
@@ -50,8 +50,8 @@ public class TestTaskFour {
     @Test
     public void testSecondSearchTestCase() throws Exception {
         mockMvc.perform(post("/search/results")
-                .param("searchType", "location")
-                .param("searchTerm", "chicago"))
+                        .param("searchType", "location")
+                        .param("searchTerm", "chicago"))
                 .andExpect(status().isOk())
                 .andExpect(xpath("//table[contains(@class, 'job-listing')][1]").doesNotExist());
     }
@@ -62,8 +62,8 @@ public class TestTaskFour {
     @Test
     public void testThirdSearchTestCase() throws Exception {
         mockMvc.perform(post("/search/results")
-                .param("searchType", "employer")
-                .param("searchTerm", "equifax"))
+                        .param("searchType", "employer")
+                        .param("searchTerm", "equifax"))
                 .andExpect(status().isOk())
                 .andExpect(xpath("//table[contains(@class, 'job-listing')][1]").exists())
                 .andExpect(xpath("//table[contains(@class, 'job-listing')][2]").doesNotExist());
@@ -75,8 +75,8 @@ public class TestTaskFour {
     @Test
     public void testFourthSearchTestCase() throws Exception {
         mockMvc.perform(post("/search/results")
-                .param("searchType", "all")
-                .param("searchTerm", "ruby"))
+                        .param("searchType", "all")
+                        .param("searchTerm", "ruby"))
                 .andExpect(status().isOk())
                 .andExpect(xpath("//table[contains(@class, 'job-listing')][1]").exists())
                 .andExpect(xpath("//table[contains(@class, 'job-listing')][2]").exists())
@@ -91,8 +91,8 @@ public class TestTaskFour {
     @Test
     public void testFifthSearchTestCase() throws Exception {
         mockMvc.perform(post("/search/results")
-                .param("searchType", "skill")
-                .param("searchTerm", "ruby"))
+                        .param("searchType", "skill")
+                        .param("searchTerm", "ruby"))
                 .andExpect(status().isOk())
                 .andExpect(xpath("//table[contains(@class, 'job-listing')][1]").exists())
                 .andExpect(xpath("//table[contains(@class, 'job-listing')][2]").exists())
