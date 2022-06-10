@@ -40,7 +40,7 @@ public class TestTaskFour {
                 .param("searchType", "location")
                 .param("searchTerm", "new york"))
                 .andExpect(status().isOk())
-                .andExpect(xpath("//table[contains(@class, 'job-listing')][1]").doesNotExist())
+                .andExpect(xpath("//table[contains(@class, 'job-listing')][1]").exists())
                 .andExpect(xpath("//table[contains(@class, 'job-listing')][2]").doesNotExist());
     }
 
@@ -65,7 +65,7 @@ public class TestTaskFour {
                 .param("searchType", "employer")
                 .param("searchTerm", "equifax"))
                 .andExpect(status().isOk())
-                .andExpect(xpath("//table[contains(@class, 'job-listing')][1]").doesNotExist())
+                .andExpect(xpath("//table[contains(@class, 'job-listing')][1]").exists())
                 .andExpect(xpath("//table[contains(@class, 'job-listing')][2]").doesNotExist());
     }
 
@@ -78,10 +78,10 @@ public class TestTaskFour {
                 .param("searchType", "all")
                 .param("searchTerm", "ruby"))
                 .andExpect(status().isOk())
-                .andExpect(xpath("//table[contains(@class, 'job-listing')][1]").doesNotExist())
-                .andExpect(xpath("//table[contains(@class, 'job-listing')][2]").doesNotExist())
-                .andExpect(xpath("//table[contains(@class, 'job-listing')][3]").doesNotExist())
-                .andExpect(xpath("//table[contains(@class, 'job-listing')][4]").doesNotExist())
+                .andExpect(xpath("//table[contains(@class, 'job-listing')][1]").exists())
+                .andExpect(xpath("//table[contains(@class, 'job-listing')][2]").exists())
+                .andExpect(xpath("//table[contains(@class, 'job-listing')][3]").exists())
+                .andExpect(xpath("//table[contains(@class, 'job-listing')][4]").exists())
                 .andExpect(xpath("//table[contains(@class, 'job-listing')][5]").doesNotExist());
     }
 
@@ -94,9 +94,9 @@ public class TestTaskFour {
                 .param("searchType", "skill")
                 .param("searchTerm", "ruby"))
                 .andExpect(status().isOk())
-                .andExpect(xpath("//table[contains(@class, 'job-listing')][1]").doesNotExist())
-                .andExpect(xpath("//table[contains(@class, 'job-listing')][2]").doesNotExist())
-                .andExpect(xpath("//table[contains(@class, 'job-listing')][3]").doesNotExist())
+                .andExpect(xpath("//table[contains(@class, 'job-listing')][1]").exists())
+                .andExpect(xpath("//table[contains(@class, 'job-listing')][2]").exists())
+                .andExpect(xpath("//table[contains(@class, 'job-listing')][3]").exists())
                 .andExpect(xpath("//table[contains(@class, 'job-listing')][4]").doesNotExist());
     }
 
