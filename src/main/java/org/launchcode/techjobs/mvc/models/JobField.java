@@ -23,7 +23,6 @@ public abstract class JobField {
     // Custom toString() method that returns the data stored in 'value'.
     @Override
     public String toString() {
-
         return value;
     }
 
@@ -38,23 +37,19 @@ public abstract class JobField {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(id);
     }
 
     // Getters and setters.
     public int getId() {
-
         return id;
     }
 
     public String getValue() {
-
         return value;
     }
 
     public void setValue(String value) {
-
         this.value = value;
     }
 }
