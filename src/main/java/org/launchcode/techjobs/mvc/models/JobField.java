@@ -53,3 +53,4 @@ public abstract class JobField {
         this.value = value;
     }
 }
+
